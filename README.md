@@ -13,9 +13,9 @@ npm start
 
 ## notes
 
-```app.js``` is the "main thread", ```entry.js``` is the "browser thread".  I found this distinction to be odd, but w/e.  It appears you can do everything you need to from the browser thread, plus you're in the window/DOM context.  
+```app.js``` is the "main thread", ```entry.js``` is the "browser thread".  I found this distinction to be odd, but w/e.  It appears you can do everything you need to from the browser thread, plus you're in the window/DOM context.  But you must have both.  
 
-Most examples I saw out there put the *app* menu logic in the browser thread.  I put in the main thread, saving on IPC calls.  
+Most examples I saw out there put the _app menu_ (at the OS level) logic in the browser thread.  I put in the main thread, saving on IPC calls.  
 
 Noteworthy from this example is calling spawn and fs from the browser thread.  
 
