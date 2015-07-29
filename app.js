@@ -19,7 +19,6 @@ app.on('ready', function(){
       }
     }]
   }])
-  console.log(Object.keys(app))
   Menu.setApplicationMenu(menu)
 })
 
