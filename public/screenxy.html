@@ -1,0 +1,5 @@
+<script>
+  var e = require('electron')
+  ipc = e.ipcRenderer
+  ipc.send('screenxy', [window.outerWidth, window.outerHeight])
+</script>
