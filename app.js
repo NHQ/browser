@@ -5,15 +5,16 @@ var bowser = electron.BrowserWindow
 var Menu = electron.Menu
 var MenuItem = electron.MenuItem
 var ipc = electron.ipcMain 
-var window, screenSize = []
+var window, screen, screenSize = []
 
 ipc.on('screenxy', (evt, val) => {
   screenSize = val
   console.log(val)  
+  screen.close()
 }) 
 
 app.on('ready', function(){
-  let screen = new bowser({
+  screen = new bowser({
     show: false,
     backgroundColor: 'transparent'
   })
@@ -26,7 +27,6 @@ app.on('ready', function(){
     height: 720,
     x: 0,
     y: 0,
-    //fullscreen: true,
     show: false,
     frame: false
   })
