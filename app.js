@@ -39,11 +39,12 @@ fs.exists(__dirname + '/ecstatus', boo => {
       socket.on('data', loc => {
         // is it a url or file?
 // TODO: electron seems to be cacheing files from localhost >:^(
-
+        loc = loc.toString()
+        loc = loc.split('!')
         let cwd = loc[0]
         loc = loc.slice(1).join('!')
         let p = url.parse(loc)
-
+        console.log(p, loc)
         if(p.protocol){
           screen.loadURL(loc)
           screen.show()
